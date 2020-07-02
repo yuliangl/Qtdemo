@@ -104,7 +104,12 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_myMainWindow.cpp
 debug/qrc_myMainWindow.cpp: ../myMainWindow/myMainWindow.qrc \
 		C:/Qt/5.15.0/mingw81_32/bin/rcc.exe \
-		../myMainWindow/images/open.png
+		../myMainWindow/images/close.png \
+		../myMainWindow/images/save.png \
+		../myMainWindow/images/open.png \
+		../myMainWindow/images/openfile.png \
+		../myMainWindow/images/save\ as.png \
+		../myMainWindow/images/exit.png
 	C:\Qt\5.15.0\mingw81_32\bin\rcc.exe -name myMainWindow ..\myMainWindow\myMainWindow.qrc -o debug\qrc_myMainWindow.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
@@ -473,7 +478,25 @@ debug/mainwindow.o: ../myMainWindow/mainwindow.cpp ../myMainWindow/mainwindow.h 
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qicon.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QVariant \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QAction \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QApplication \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qinputmethod.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QMenu \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qmenu.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QMenuBar \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qmenubar.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QStatusBar \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qstatusbar.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\myMainWindow\mainwindow.cpp
 
 debug/qrc_myMainWindow.o: debug/qrc_myMainWindow.cpp 
