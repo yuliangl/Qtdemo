@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_file_F">
+    <property name="title">
+     <string>file(&amp;F)</string>
+    </property>
+    <addaction name="action_New_Project_N"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit(&amp;E)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuBuild">
+    <property name="title">
+     <string>Build(&amp;B)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuDebug_D">
+    <property name="title">
+     <string>Debug(&amp;D)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuTool_I">
+    <property name="title">
+     <string>Tool(&amp;I)</string>
+    </property>
+   </widget>
+   <addaction name="menu_file_F"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuBuild"/>
+   <addaction name="menuDebug_D"/>
+   <addaction name="menuTool_I"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_New_Project_N">
+   <property name="icon">
+    <iconset resource="myMainWindow.qrc">
+     <normaloff>:/myImages/images/open.png</normaloff>:/myImages/images/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Project(&amp;N)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="myMainWindow.qrc"/>
+ </resources>
+ <connections/>
+</ui>
