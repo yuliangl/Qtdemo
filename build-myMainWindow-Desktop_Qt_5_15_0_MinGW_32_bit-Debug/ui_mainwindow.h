@@ -32,6 +32,11 @@ public:
     QAction *actionsave_S;
     QAction *actionsave_as_A;
     QAction *actionexit_X;
+    QAction *actionundo_Z;
+    QAction *actioncut_X;
+    QAction *actioncopy_c;
+    QAction *actionpaste_V;
+    QAction *actionfind_F;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QTextEdit *textEdit;
@@ -79,6 +84,31 @@ public:
         QIcon icon5;
         icon5.addFile(QString::fromUtf8(":/myImages/images/exit.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionexit_X->setIcon(icon5);
+        actionundo_Z = new QAction(MainWindow);
+        actionundo_Z->setObjectName(QString::fromUtf8("actionundo_Z"));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/myImages/images/undo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionundo_Z->setIcon(icon6);
+        actioncut_X = new QAction(MainWindow);
+        actioncut_X->setObjectName(QString::fromUtf8("actioncut_X"));
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/myImages/images/cut.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actioncut_X->setIcon(icon7);
+        actioncopy_c = new QAction(MainWindow);
+        actioncopy_c->setObjectName(QString::fromUtf8("actioncopy_c"));
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/myImages/images/copy.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actioncopy_c->setIcon(icon8);
+        actionpaste_V = new QAction(MainWindow);
+        actionpaste_V->setObjectName(QString::fromUtf8("actionpaste_V"));
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/myImages/images/paste.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionpaste_V->setIcon(icon9);
+        actionfind_F = new QAction(MainWindow);
+        actionfind_F->setObjectName(QString::fromUtf8("actionfind_F"));
+        QIcon icon10;
+        icon10.addFile(QString::fromUtf8(":/myImages/images/find.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionfind_F->setIcon(icon10);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -121,13 +151,20 @@ public:
         menu_file_F->addAction(actionsave_S);
         menu_file_F->addAction(actionsave_as_A);
         menu_file_F->addAction(actionexit_X);
+        menuEdit->addAction(actionundo_Z);
+        menuEdit->addAction(actioncut_X);
+        menuEdit->addAction(actioncopy_c);
+        menuEdit->addAction(actionpaste_V);
+        menuEdit->addAction(actionfind_F);
         toolBar->addAction(action_New_Project_N);
-        toolBar->addAction(actionopen_O);
-        toolBar->addAction(actionClose_C);
         toolBar->addAction(actionsave_S);
         toolBar->addAction(actionsave_as_A);
-        toolBar->addAction(actionexit_X);
         toolBar->addSeparator();
+        toolBar->addAction(actionundo_Z);
+        toolBar->addAction(actioncut_X);
+        toolBar->addAction(actioncopy_c);
+        toolBar->addAction(actionpaste_V);
+        toolBar->addAction(actionfind_F);
 
         retranslateUi(MainWindow);
 
@@ -160,6 +197,26 @@ public:
         actionexit_X->setText(QCoreApplication::translate("MainWindow", "exit(&X)", nullptr));
 #if QT_CONFIG(shortcut)
         actionexit_X->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+X", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionundo_Z->setText(QCoreApplication::translate("MainWindow", "undo(&Z)", nullptr));
+#if QT_CONFIG(shortcut)
+        actionundo_Z->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Z", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actioncut_X->setText(QCoreApplication::translate("MainWindow", "cut(&X)", nullptr));
+#if QT_CONFIG(shortcut)
+        actioncut_X->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+X", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actioncopy_c->setText(QCoreApplication::translate("MainWindow", "copy(&C)", nullptr));
+#if QT_CONFIG(shortcut)
+        actioncopy_c->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+C", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionpaste_V->setText(QCoreApplication::translate("MainWindow", "paste(&V)", nullptr));
+#if QT_CONFIG(shortcut)
+        actionpaste_V->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+V", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionfind_F->setText(QCoreApplication::translate("MainWindow", "find(&F)", nullptr));
+#if QT_CONFIG(shortcut)
+        actionfind_F->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+F", nullptr));
 #endif // QT_CONFIG(shortcut)
         textEdit->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"

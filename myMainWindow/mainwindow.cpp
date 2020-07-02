@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QAction>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow),
@@ -86,17 +87,64 @@ bool MainWindow::saveFile(const QString &fileName){
 
 }
 
-void MainWindow::on_action_New_Project_N_triggered()
-{
-    newFile();
+bool MainWindow::loadFile(const QString &fileName){
+    QFile file(fileName);
+    if(!file.open(QFile::ReadOnly | QFile::Text)){
+        QMessageBox::warning(this, tr("multiple editer"),
+                             tr("can not loadfile %1 /n %2")
+                             .arg(fileName).arg(file.errorString()));
+        return false;
+    }
+    QTextStream in(&file);
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+    ui->textEdit->setPlainText(in.readAll());
+    QApplication::restoreOverrideCursor();
+
+    curFile = QFileInfo(fileName).canonicalFilePath();
+    setWindowTitle(curFile);
+    return true;
 }
 
-void MainWindow::on_actionsave_S_triggered()
-{
-    save();
+void MainWindow::on_action_New_Project_N_triggered() {newFile();}
+
+void MainWindow::on_actionsave_S_triggered() {save();}
+
+void MainWindow::on_actionsave_as_A_triggered() {saveAs();}
+
+void MainWindow::on_actionopen_O_triggered(){
+    if(maybeSave()){
+        QString fileName = QFileDialog::getOpenFileName(this);
+
+        if(!fileName.isEmpty()){
+            loadFile(fileName);
+            ui->textEdit->setVisible(true);
+        }
+    }
 }
 
-void MainWindow::on_actionsave_as_A_triggered()
-{
-    saveAs();
+void MainWindow::on_actionClose_C_triggered(){
+    if(maybeSave()){
+        ui->textEdit->setVisible(false);
+    }
+}
+
+void MainWindow::on_actionexit_X_triggered(){
+    on_actionClose_C_triggered();
+    qApp->quit();
+}
+
+void MainWindow::on_actionundo_Z_triggered(){
+    ui->textEdit->undo();
+}
+
+void MainWindow::on_actioncut_X_triggered(){
+    ui->textEdit->cut();
+}
+
+void MainWindow::on_actioncopy_c_triggered(){
+    ui->textEdit->copy();
+}
+
+void MainWindow::on_actionpaste_V_triggered(){
+    ui->textEdit->paste();
 }

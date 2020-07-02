@@ -6,5 +6,10 @@
         <file>images/openfile.png</file>
         <file>images/save as.png</file>
         <file>images/save.png</file>
+        <file>images/copy.png</file>
+        <file>images/cut.png</file>
+        <file>images/find.png</file>
+        <file>images/paste.png</file>
+        <file>images/undo.png</file>
     </qresource>
 </RCC>
