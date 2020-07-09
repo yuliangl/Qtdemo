@@ -2,6 +2,12 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QFile>
+#include <QFileDialog>
+#include <opencv2/opencv.hpp>
+#include <QMessageBox>
+#include "myLabel.h"
+#include <QPoint>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -15,7 +21,19 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
+private slots:
+    void openPathSlot();
+    void startPointSlot(QPoint p);
+    void stopPointSlot(QPoint P);
+    void pointTextChangeSlot(QString);
+
 private:
     Ui::Widget *ui;
+    void show_img(cv::Mat image, QLabel *label);
+    myLabel *label_img;
+    cv::VideoCapture *capture = NULL;
+    QPoint startPoint;
+
+
 };
 #endif // WIDGET_H
