@@ -34,7 +34,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_file_F">
@@ -62,6 +62,7 @@ p, li { white-space: pre-wrap; }
     <property name="title">
      <string>Build(&amp;B)</string>
     </property>
+    <addaction name="actionbuid_all_pro"/>
    </widget>
    <widget class="QMenu" name="menuDebug_D">
     <property name="title">
@@ -72,6 +73,7 @@ p, li { white-space: pre-wrap; }
     <property name="title">
      <string>Tool(&amp;I)</string>
     </property>
+    <addaction name="actionoption"/>
    </widget>
    <addaction name="menu_file_F"/>
    <addaction name="menuEdit"/>
@@ -230,6 +232,23 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="shortcut">
     <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionbuid_all_pro">
+   <property name="text">
+    <string>buid all pro</string>
+   </property>
+  </action>
+  <action name="actionoption">
+   <property name="icon">
+    <iconset resource="myMainWindow.qrc">
+     <normaloff>:/myImages/images/undo.png</normaloff>:/myImages/images/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>option(O)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
    </property>
   </action>
  </widget>
