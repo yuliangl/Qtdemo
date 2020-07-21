@@ -5,6 +5,7 @@
 #include <QFile>
 #include <QFileDialog>
 #include <opencv2/opencv.hpp>
+#include <opencv2/imgproc/types_c.h>
 #include <QMessageBox>
 #include "myLabel.h"
 #include <QPoint>

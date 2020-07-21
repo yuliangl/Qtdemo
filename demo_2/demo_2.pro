@@ -32,8 +32,10 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-INCLUDEPATH += D:\opencv\minGW_build\install\include \
-                D:\opencv\minGW_build\install\include\opencv \
-                D:\opencv\minGW_build\install\include\opencv2
+INCLUDEPATH += C:\WorkSpace\OpenCV\install\include \
+                C:\WorkSpace\OpenCV\install\include\opencv2
 
-LIBS += D:\opencv\minGW_build\lib\libopencv_*.a
+
+LIBS += C:\WorkSpace\OpenCV\lib\libopencv_*.a
+
+#\D:\opencv\minGW_build\install\include\opencv2
