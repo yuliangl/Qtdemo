@@ -23,8 +23,15 @@ private slots:
 
     void on_close_But_clicked();
 
+    void doReadyRead();
+
+    void doDisconnected();
+
+    void outError(QAbstractSocket::SocketError);
+
 private:
     Ui::Widget *ui;
     QTcpSocket *tcpSocket;
+    QDataStream readStream;
 };
 #endif // WIDGET_H
