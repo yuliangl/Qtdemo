@@ -42,10 +42,10 @@ Widget::~Widget()
 
 void Widget::doReadyRead()
 {
-    if(tcpSocket->waitForReadyRead() == false){
-        qDebug() <<"Server does not response!";
-        return;
-    }
+//    if(tcpSocket->waitForReadyRead() == false){
+//        qDebug() <<"Server does not response!";
+//        return;
+//    }
     qDebug() << "readyread";
     QByteArray array = tcpSocket->readAll();
 
@@ -77,7 +77,7 @@ void Widget::doDisconnected()
 
 void Widget::outError(QAbstractSocket::SocketError error)
 {
-    qDebug() << error;
+    qDebug() << "connect error is : "<< error;
 }
 
 void Widget::on_send_But_clicked()
