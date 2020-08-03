@@ -127,7 +127,7 @@ void Widget::openPathSlot(){
         }
 
         show_img(frame,label_img);
-        ui->label_path->setText(file_name);
+        ui->label_path->setText(QString("RUN ") + file_name);
     }
 }
 
